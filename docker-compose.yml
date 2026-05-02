@@ -1,0 +1,15 @@
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    user: "502:80"
+    ports:
+      - "5678:5678"
+    environment:
+      - HOME=/home/node
+      - GENERIC_TIMEZONE=Asia/Ho_Chi_Minh
+      - TZ=Asia/Ho_Chi_Minh
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - N8N_RUNNERS_ENABLED=true
+    volumes:
+      - /Users/ducpv-8797/Documents/Projects/n8n-storage:/home/node
